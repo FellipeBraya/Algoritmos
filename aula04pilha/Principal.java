@@ -9,6 +9,7 @@ public class Principal{
 
         System.out.println("Dado "+ pilha.pop()+"removido");
 
-        pilha.imprimePilha();
+        //pilha.imprimePilha();
+        System.out.println("Topo =" + pilha.peek());
     }
 }

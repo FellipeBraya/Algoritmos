@@ -1,5 +1,3 @@
-import aula03.No;
-
 public class Pilha <T> {
     private No <T> topo;
     private String nomePilha;
@@ -16,23 +14,35 @@ public class Pilha <T> {
     public void push (T dado){
         No<T> novoNo = new No<T>(dado);
 
-        if(topo == null){
+        novoNo.setNextNo(topo);
+        topo = novoNo;
+
+        /*if(topo == null){
             topo = novoNo;
         }else{
             novoNo.setNextNo(topo);
             topo = novoNo;
+        }*/
+    }
+
+    public T peek(){
+        if(topo == null) {
+            System.out.println("Pilha Vazia!");
+            return null;
+        }else{
+            return topo.getDado();
         }
     }
 
     public T pop(){
-        if(topo == null);
+        if(topo == null){
         System.out.println("Pilha Vazia");
         return null;
-    }else{
+    } else {
         T dadoTemp = topo.getDado();
         topo = topo.getNextNo();
         return dadoTemp;}
-
+    }
     public void imprimePilha(){
         if (topo == null){
             System.out.println("Pilha Vazia");
